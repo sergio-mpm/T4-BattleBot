@@ -40,8 +40,8 @@ import datetime
 
 class Bot():
 
-    name = "HanSolo"  # BOT NAME
-    host = "atari.icad.puc-rio.br"  # SERVER
+    name = "Stormtrooper"  # BOT NAME
+    host = "baffa.zapto.org"  # SERVER
 
     client = None
     gameAi = None
@@ -288,7 +288,7 @@ class Bot():
     # </summary>
     def DoDecision(self):
 
-        decision = self.gameAi.GetDecision()
+        decision = self.gameAi.GetDecision(-1)
         if decision == "virar_direita":
             self.client.sendTurnRight()
         elif decision == "virar_esquerda":
@@ -311,7 +311,7 @@ class Bot():
 
     def timer1_Tick(self):
         
-        self.msgSeconds += self.timer1.interval * 100  # KEEP THIS AS IS - 1000 miliseconds = 1 second
+        self.msgSeconds += self.timer1.interval * 0.2  # KEEP THIS AS IS - 1000 miliseconds = 1 second
 
         self.client.sendRequestGameStatus()
         if self.gameStatus == "Game":

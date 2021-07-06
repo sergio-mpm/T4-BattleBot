@@ -143,35 +143,35 @@ class GameAI():
         for s in o:
         
             if s == "blocked":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(7)
                 pass
             
             elif s == "steps":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(2)
                 pass
             
             elif s == "breeze":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(2)
                 pass
 
             elif s == "flash":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(3)
                 pass
 
             elif s == "blueLight":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(6)
                 pass
 
             elif s == "redLight":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(5)
                 pass
 
             elif s == "greenLight":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(7)
                 pass
 
             elif s == "weakLight":
-                self.GameAI.GetDecision()
+                self.GameAI.GetDecision(3)
                 pass
 
     # <summary>
@@ -184,9 +184,10 @@ class GameAI():
     # Get Decision
     # </summary>
     # <returns>command string to new decision</returns>
-    def GetDecision(self):
+    def GetDecision(self, n):
 
-        n = random.randint(0, 7)
+        if n == -1:
+            n = random.randint(0, 7)
 
         if n == 0:
             return "virar_direita"
