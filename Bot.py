@@ -311,7 +311,7 @@ class Bot():
 
     def timer1_Tick(self):
         
-        self.msgSeconds += self.timer1.interval * 1000 # KEEP THIS AS IS - 1000 miliseconds = 1 second
+        self.msgSeconds += self.timer1.interval * 100  # KEEP THIS AS IS - 1000 miliseconds = 1 second
 
         self.client.sendRequestGameStatus()
         if self.gameStatus == "Game":
